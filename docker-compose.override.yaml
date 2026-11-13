@@ -1,0 +1,14 @@
+services:
+  airflow-scheduler:
+    image: depi-airflow-session30:3.1.5
+    pull_policy: build
+    build:
+      context: .
+      args:
+        AIRFLOW_BASE_IMAGE: ${AIRFLOW_IMAGE_NAME:-apache/airflow:3.1.5}
+    volumes:
+      - ./EL:/opt/airflow/f1/EL:ro
+      - ./T:/opt/airflow/f1/T
+    environment:
+      DBT_LOG_PATH: /opt/airflow/logs/dbt
+      DBT_TARGET_PATH: /tmp/f1-dbt-target

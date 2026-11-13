@@ -1,0 +1,8 @@
+requests==2.32.5
+beautifulsoup4==4.14.3
+pandas==2.3.3
+tqdm==4.67.1
+psycopg2-binary==2.9.11
+python-dotenv[cli]==1.2.1
+dbt-core==1.12.6
+dbt-postgres==1.11.0
